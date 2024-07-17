@@ -1,7 +1,8 @@
-import "./App.css";
+import React from "react";
+import Homepage from "./HomePage";
 
-function App() {
-  return <h1>this is the trial to render react app</h1>;
-}
+const App = () => {
+  return <Homepage />;
+};
 
 export default App;
