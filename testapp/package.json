@@ -23,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "start:backend": "node testapp/testappBackend/backend.js",
+    "start:backend": "node testapp/testappBackend/Backend.js",
     "serve": "serve -s build -l 3000",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
