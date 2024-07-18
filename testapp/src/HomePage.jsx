@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useNavigate } from 'react-router-dom';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -12,6 +13,11 @@ const navigation = [
 
 export default function Homepage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate() ;
+
+  const HandleCLickLogin = () => {
+    navigate('/login');
+  };
 
   return (
     <div className="bg-white">
@@ -45,9 +51,12 @@ export default function Homepage() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-black bg-white rounded-2xl p-2">
-              Log in <span aria-hidden="true">&rarr;</span>
-            </a>
+          <button
+            onClick={HandleCLickLogin}
+            className="text-sm font-semibold leading-6 text-black bg-white rounded-2xl p-2"
+          >
+          Log in <span aria-hidden="true">&rarr;</span>
+          </button>
           </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
