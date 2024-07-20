@@ -6,13 +6,13 @@ RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
 WORKDIR /home/node/app
 
 # Copy package.json and package-lock.json
-COPY --chown=node:node testappFrontend/package*.json ./
+COPY --chown=node:node testappFrontend/package*.json ./testappFrontend
 
 # Install project dependencies
 RUN npm install
 
 # Copy the entire frontend application code
-COPY --chown=node:node testappFrontend ./
+COPY --chown=node:node testappFrontend ./testappFrontend
 
 # Build the frontend application
 RUN npm run build

@@ -6,13 +6,13 @@ RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
 WORKDIR /home/node/app
 
 # Copy package.json and package-lock.json
-COPY --chown=node:node testappBackend/package*.json ./
+COPY --chown=node:node testappBackend/package*.json ./testappBackend
 
 # Install project dependencies
 RUN npm install
 
 # Copy the entire backend application code
-COPY --chown=node:node testappBackend ./
+COPY --chown=node:node testappBackend ./testappBackend
 
 # Expose the port the app runs on
 EXPOSE 3001
